@@ -12,25 +12,50 @@ const Home: FC = () => {
     const whenClick = () => {
         navigate("/login");
     }
+    const whenClickToMotor = () => {
+        navigate("/motor");
+    }
+    const whenClickToFire = () => {
+        navigate("/fire");
+    }
+    const whenClickToMiscellaneous = () => {
+        navigate("/miscellaneous");
+    }
+    const whenClickToTransportation = () => {
+        navigate("/transportation");
+    }
 
     return <>
         <div className="box">
             <div className='top-header'>
                 <h2 className='TOP-text' style={{ textAlign: "center" }}  >CAR INURANCE INSURANCE</h2>
                 <div className='top-logo'>
-                    <img src='โลโก้ประกันยานยนต์.jpg' alt='Logo' />
+                    <img src='img/โลโก้ประกันยานยนต์.jpg' alt='Logo' />
                 </div>
                 <div className="logout">
                     <button onClick={whenClick}>Logout</button>
                 </div>
+
             </div>
+/**************************************************************************************************************************** */
+            <div style={{ textAlign: "center", marginTop: "120px",background:"#e29acb",height:"50px" }}><h1>ผลิตภัณฑ์</h1></div>
 
 
-            <div className="content">
-                <div className="top-text" style={{ padding: "100px" }}>
+            {/* <div className='row' style={{  gap: "20px",display:"flex",justifyContent:"center",padding: "140px",marginTop:"120px"}}>
+                {/* <h2 style={{ backgroundColor: "#e8c6dd", padding: "50px",  top: "60px" }}>ผลิตภัณฑ์</h2> */}
+            {/* <img src='img/motor.png' width='120'  />
+                <img src='img/fire.png' width='120' />
+                <img src='img/transportation.png' width='120' />
+                <img src='img/miscellaneous.png' width='120' />
+            </div> */}
+
+
+            <div className="content" style={{ position: "absolute" }}>
+                <div className="top-text" >
+
                     
-                    <h2>ผลิตภัณฑ์</h2>
                     <h3>1. ประกันภัยรถยนต์ (Motor Insurance)</h3>
+                    <img src='img/motor.png' width='120' />
                     <p>ความหมาย:<br />
                         ประกันภัยรถยนต์ให้ความคุ้มครองความเสียหายที่เกิดขึ้นกับรถยนต์ ผู้ขับขี่ ผู้โดยสาร หรือบุคคลภายนอกจากอุบัติเหตุ รวมถึงความรับผิดชอบทางกฎหมายต่อบุคคลที่สาม
 
@@ -43,8 +68,11 @@ const Home: FC = () => {
                         ประโยชน์:<br />
 
                         ช่วยบรรเทาความเสี่ยงจากค่าซ่อมรถหรือค่าชดเชยเมื่อเกิดอุบัติเหตุ
-                        ให้ความคุ้มครองชีวิตและทรัพย์สินของผู้ขับขี่, ผู้โดยสาร และบุคคลภายนอก</p>
+                        ให้ความคุ้มครองชีวิตและทรัพย์สินของผู้ขับขี่, ผู้โดยสาร และบุคคลภายนอก</p><br />
+                    <button onClick={whenClickToMotor}>ประกันภัยรถยนต์</button><br /><br />
+                    
                     <h3>2. ประกันทรัพย์สิน (Property Insurance)</h3>
+                    <img src='img/fire.png' width='120' />
                     <p>ความหมาย:<br />
                         ให้ความคุ้มครองทรัพย์สินต่างๆ เช่น บ้าน อาคาร โรงงาน หรือสิ่งของต่างๆ จากความเสียหายที่เกิดจากไฟไหม้ น้ำท่วม ภัยธรรมชาติ การโจรกรรม หรืออุบัติเหตุอื่นๆ
 
@@ -57,8 +85,11 @@ const Home: FC = () => {
 
                         ช่วยลดความเสี่ยงจากความสูญเสียทรัพย์สินมูลค่าสูง
                         เพิ่มความอุ่นใจในการใช้ชีวิตหรือดำเนินธุรกิจ
-                    </p>
+                    </p><br />
+                    <button onClick={whenClickToFire}>ประกันทรัพย์สิน</button><br /><br />
+                    
                     <h3>3. ประกันภัยสินค้าทางทะเลและขนส่ง (Marine and Cargo Insurance)</h3>
+                    <img src='img/transportation.png' width='120' />
                     <p>ความหมาย:<br />
                         ประกันภัยที่คุ้มครองความเสียหายหรือสูญหายของสินค้าในระหว่างการขนส่งทางทะเล ทางอากาศ หรือทางบก
 
@@ -76,8 +107,11 @@ const Home: FC = () => {
 
                         ช่วยป้องกันความสูญเสียทางธุรกิจจากการขนส่งสินค้า
                         เพิ่มความมั่นใจให้ผู้ค้าและเจ้าของสินค้า
-                    </p>
+                    </p><br />
+                    <button onClick={whenClickToTransportation}>ประกันภัยสินค้าทางทะเลและขนส่ง</button><br /><br />
+                    
                     <h3>4. ประกันภัยเบ็ดเตล็ด (Miscellaneous Insurance)</h3>
+                    <img src='img/miscellaneous.png' width='120' />
                     <p>ความหมาย:<br />
                         ประกันภัยที่ครอบคลุมความเสี่ยงอื่นๆ ซึ่งไม่จัดอยู่ในหมวดหมู่หลัก เช่น อุบัติเหตุ การโจรกรรม สุขภาพ หรือความเสี่ยงเฉพาะทาง
 
@@ -92,16 +126,25 @@ const Home: FC = () => {
 
                         ให้ความคุ้มครองเฉพาะตามความต้องการของผู้ทำประกัน
                         ช่วยจัดการความเสี่ยงในสถานการณ์ที่หลากหลาย
-                    </p>
+                    </p><br />
+                    <button onClick={whenClickToMiscellaneous}>ประกันภัยเบ็ดเตล็ด</button><br /><br />
                     <h3>สรุป</h3>
                     <p>ประกันภัยรถยนต์: คุ้มครองความเสียหายที่เกี่ยวกับรถและอุบัติเหตุ<br />
                         ประกันทรัพย์สิน: คุ้มครองทรัพย์สินจากความเสี่ยง เช่น ไฟไหม้หรือภัยธรรมชาติ<br />
                         ประกันสินค้าทางทะเลและขนส่ง: คุ้มครองสินค้าระหว่างการขนส่ง<br />
                         ประกันภัยเบ็ดเตล็ด: ครอบคลุมความเสี่ยงอื่นๆ เช่น อุบัติเหตุ, การโจรกรรม หรือสุขภาพ</p>
                 </div>
+                <div className='footer' style={{ textAlign: "center",background:"#e29acb"}}>
+                
+                    <h2 >CAR INURANCE INSURANCE จัดทำโดย นายจตุรงค์ ผาสุข</h2>
+                    <p>เพื่อการศึกษาระหว่างฝึกงานอยู่ ไอโออิ กรุงเทพ ประกันภัย (มหาชน)</p>
+                
             </div>
+            </div>
+            
 
-        </div>
+        </div >
+        
     </>
 }
 
