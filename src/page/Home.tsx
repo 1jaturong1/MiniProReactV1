@@ -1,151 +1,96 @@
-import { FC } from 'react';
-import '../index.css';
-import { useNavigate } from 'react-router-dom';
-
-
-
+import { FC } from "react";
+import { useNavigate } from "react-router-dom";
+import "../Home.css";
 
 const Home: FC = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const whenClick = () => navigate("/login");
+  const whenClickToMotor = () => navigate("/motor");
+  const whenClickToFire = () => navigate("/fire");
+  const whenClickToMiscellaneous = () => navigate("/miscellaneous");
+  const whenClickToTransportation = () => navigate("/transportation");
+  const whenClickToClaim = () => navigate("/claim");
+  const whenClickToHome = () => navigate("/home");
+  const whenClickToSuggestions = () => navigate("/suggestions");
 
-    const whenClick = () => {
-        navigate("/login");
-    }
-    const whenClickToMotor = () => {
-        navigate("/motor");
-    }
-    const whenClickToFire = () => {
-        navigate("/fire");
-    }
-    const whenClickToMiscellaneous = () => {
-        navigate("/miscellaneous");
-    }
-    const whenClickToTransportation = () => {
-        navigate("/transportation");
-    }
-
-    return <>
-        <div className="box">
-            <div className='top-header'>
-                <h2 className='TOP-text' style={{ textAlign: "center" }}  >CAR INURANCE INSURANCE</h2>
-                <div className='top-logo'>
-                    <img src='img/โลโก้ประกันยานยนต์.jpg' alt='Logo' />
+  return (
+    <>
+      <div className="home-container">
+        {/* Header */}
+        <div className="sidebar">
+                <div className="logo">
+                    <img src="img/โลโก้ประกันยานยนต์.jpg" alt="Logo" />
+                    {/* <h3>CAR INSURANCE</h3> */}
                 </div>
-                <div className="logout">
-                    <button onClick={whenClick}>Logout</button>
+                <div className="nav-items">
+                    <button className="nav-item" onClick={whenClickToHome}>ผลิตภัณฑ์</button>
+                    <button className="nav-item" onClick={whenClickToClaim}>เคลม</button>
+                    <button className="nav-item" onClick={whenClickToSuggestions}>เสนอแนะ</button>
+                    <button className="nav-item" onClick={whenClick}>Logout</button>
                 </div>
-
             </div>
-/**************************************************************************************************************************** */
-            <div style={{ textAlign: "center", marginTop: "120px",background:"#e29acb",height:"50px" }}><h1>ผลิตภัณฑ์</h1></div>
 
-
-            {/* <div className='row' style={{  gap: "20px",display:"flex",justifyContent:"center",padding: "140px",marginTop:"120px"}}>
-                {/* <h2 style={{ backgroundColor: "#e8c6dd", padding: "50px",  top: "60px" }}>ผลิตภัณฑ์</h2> */}
-            {/* <img src='img/motor.png' width='120'  />
-                <img src='img/fire.png' width='120' />
-                <img src='img/transportation.png' width='120' />
-                <img src='img/miscellaneous.png' width='120' />
-            </div> */}
-
-
-            <div className="content" style={{ position: "absolute" }}>
-                <div className="top-text" >
-
-                    
-                    <h3>1. ประกันภัยรถยนต์ (Motor Insurance)</h3>
-                    <img src='img/motor.png' width='120' />
-                    <p>ความหมาย:<br />
-                        ประกันภัยรถยนต์ให้ความคุ้มครองความเสียหายที่เกิดขึ้นกับรถยนต์ ผู้ขับขี่ ผู้โดยสาร หรือบุคคลภายนอกจากอุบัติเหตุ รวมถึงความรับผิดชอบทางกฎหมายต่อบุคคลที่สาม
-
-                        ประเภทของประกันรถยนต์:<br />
-
-                        ประกันภัยชั้น 1: คุ้มครองครอบคลุมที่สุด ทั้งความเสียหายของรถคันเอาประกัน, รถคู่กรณี, ไฟไหม้, สูญหาย และภัยธรรมชาติ<br />
-                        ประกันภัยชั้น 2+: คุ้มครองคล้ายชั้น 1 แต่ไม่รวมการชนแบบไม่มีคู่กรณี<br />
-                        ประกันภัยชั้น 3+: คุ้มครองความเสียหายเฉพาะรถคู่กรณีและกรณีรถชน<br />
-                        ประกันภัยชั้น 3: คุ้มครองเฉพาะความรับผิดชอบต่อบุคคลภายนอก<br />
-                        ประโยชน์:<br />
-
-                        ช่วยบรรเทาความเสี่ยงจากค่าซ่อมรถหรือค่าชดเชยเมื่อเกิดอุบัติเหตุ
-                        ให้ความคุ้มครองชีวิตและทรัพย์สินของผู้ขับขี่, ผู้โดยสาร และบุคคลภายนอก</p><br />
-                    <button onClick={whenClickToMotor}>ประกันภัยรถยนต์</button><br /><br />
-                    
-                    <h3>2. ประกันทรัพย์สิน (Property Insurance)</h3>
-                    <img src='img/fire.png' width='120' />
-                    <p>ความหมาย:<br />
-                        ให้ความคุ้มครองทรัพย์สินต่างๆ เช่น บ้าน อาคาร โรงงาน หรือสิ่งของต่างๆ จากความเสียหายที่เกิดจากไฟไหม้ น้ำท่วม ภัยธรรมชาติ การโจรกรรม หรืออุบัติเหตุอื่นๆ
-
-                        ประเภทหลัก:
-
-                        ประกันอัคคีภัย (Fire Insurance): คุ้มครองความเสียหายจากไฟไหม้ ฟ้าผ่า ระเบิด และภัยเสริมอื่นๆ
-                        ประกันภัยบ้านและที่อยู่อาศัย: คุ้มครองบ้านพักอาศัยและทรัพย์สินภายในบ้านจากความเสียหายที่ระบุไว้
-                        ประกันภัยโรงงาน/อาคารพาณิชย์: คุ้มครองทรัพย์สินในเชิงธุรกิจ
-                        ประโยชน์:
-
-                        ช่วยลดความเสี่ยงจากความสูญเสียทรัพย์สินมูลค่าสูง
-                        เพิ่มความอุ่นใจในการใช้ชีวิตหรือดำเนินธุรกิจ
-                    </p><br />
-                    <button onClick={whenClickToFire}>ประกันทรัพย์สิน</button><br /><br />
-                    
-                    <h3>3. ประกันภัยสินค้าทางทะเลและขนส่ง (Marine and Cargo Insurance)</h3>
-                    <img src='img/transportation.png' width='120' />
-                    <p>ความหมาย:<br />
-                        ประกันภัยที่คุ้มครองความเสียหายหรือสูญหายของสินค้าในระหว่างการขนส่งทางทะเล ทางอากาศ หรือทางบก
-
-                        ประเภทหลัก:
-
-                        การขนส่งทางทะเล (Marine Cargo): คุ้มครองสินค้าที่ขนส่งผ่านเรือในระหว่างการเดินทางข้ามประเทศ
-                        การขนส่งภายในประเทศ: คุ้มครองการขนส่งสินค้าทางรถยนต์หรือรถไฟ
-                        การขนส่งทางอากาศ: คุ้มครองสินค้าระหว่างการขนส่งทางเครื่องบิน
-                        ความคุ้มครองที่สำคัญ:
-
-                        ความเสียหายของสินค้าในกรณีเรือจม ไฟไหม้ หรืออุบัติเหตุอื่นๆ
-                        ความสูญหายของสินค้าระหว่างการขนส่ง
-                        ความเสี่ยงจากภัยธรรมชาติหรือเหตุสุดวิสัย
-                        ประโยชน์:
-
-                        ช่วยป้องกันความสูญเสียทางธุรกิจจากการขนส่งสินค้า
-                        เพิ่มความมั่นใจให้ผู้ค้าและเจ้าของสินค้า
-                    </p><br />
-                    <button onClick={whenClickToTransportation}>ประกันภัยสินค้าทางทะเลและขนส่ง</button><br /><br />
-                    
-                    <h3>4. ประกันภัยเบ็ดเตล็ด (Miscellaneous Insurance)</h3>
-                    <img src='img/miscellaneous.png' width='120' />
-                    <p>ความหมาย:<br />
-                        ประกันภัยที่ครอบคลุมความเสี่ยงอื่นๆ ซึ่งไม่จัดอยู่ในหมวดหมู่หลัก เช่น อุบัติเหตุ การโจรกรรม สุขภาพ หรือความเสี่ยงเฉพาะทาง
-
-                        ตัวอย่างความคุ้มครอง:
-
-                        ประกันภัยอุบัติเหตุส่วนบุคคล (PA Insurance): คุ้มครองค่ารักษาพยาบาล การเสียชีวิต หรือทุพพลภาพจากอุบัติเหตุ
-                        ประกันภัยการโจรกรรม: คุ้มครองความสูญหายหรือเสียหายจากการถูกขโมย
-                        ประกันภัยเงินและทรัพย์สิน (Money Insurance): คุ้มครองเงินสดและทรัพย์สินในระหว่างการขนย้ายหรือจัดเก็บ
-                        ประกันสุขภาพ (Health Insurance): คุ้มครองค่ารักษาพยาบาลทั้งผู้ป่วยในและผู้ป่วยนอก
-                        ประกันภัยความรับผิด (Liability Insurance): คุ้มครองความรับผิดชอบทางกฎหมายต่อความเสียหายที่เกิดกับบุคคลอื่น
-                        ประโยชน์:
-
-                        ให้ความคุ้มครองเฉพาะตามความต้องการของผู้ทำประกัน
-                        ช่วยจัดการความเสี่ยงในสถานการณ์ที่หลากหลาย
-                    </p><br />
-                    <button onClick={whenClickToMiscellaneous}>ประกันภัยเบ็ดเตล็ด</button><br /><br />
-                    <h3>สรุป</h3>
-                    <p>ประกันภัยรถยนต์: คุ้มครองความเสียหายที่เกี่ยวกับรถและอุบัติเหตุ<br />
-                        ประกันทรัพย์สิน: คุ้มครองทรัพย์สินจากความเสี่ยง เช่น ไฟไหม้หรือภัยธรรมชาติ<br />
-                        ประกันสินค้าทางทะเลและขนส่ง: คุ้มครองสินค้าระหว่างการขนส่ง<br />
-                        ประกันภัยเบ็ดเตล็ด: ครอบคลุมความเสี่ยงอื่นๆ เช่น อุบัติเหตุ, การโจรกรรม หรือสุขภาพ</p>
-                </div>
-                <div className='footer' style={{ textAlign: "center",background:"#e29acb"}}>
-                
-                    <h2 >CAR INURANCE INSURANCE จัดทำโดย นายจตุรงค์ ผาสุข</h2>
-                    <p>เพื่อการศึกษาระหว่างฝึกงานอยู่ ไอโออิ กรุงเทพ ประกันภัย (มหาชน)</p>
-                
-            </div>
-            </div>
-            
-
-        </div >
         
+
+        {/* Main Content */}
+        <main className="home-main">
+        <div className="top-header">
+                    <h2 className="header-text">ผลิตภัณฑ์</h2>
+                    <div className="top-logo">
+                        {/* <img src="img/โลโก้ประกันยานยนต์.jpg" alt="Logo" /> */}
+                    </div>
+                </div>
+          <div className="products-grid">
+            <div className="product-card">
+              <h3>ประกันภัยรถยนต์</h3>
+              <img src="img/motor.png" alt="Motor Insurance" />
+              <p>ให้ความคุ้มครองเกี่ยวกับรถยนต์และอุบัติเหตุ</p>
+              <button className="btn-primary" onClick={whenClickToMotor}>
+                รายละเอียด
+              </button>
+            </div>
+            <div className="product-card">
+              <h3>ประกันทรัพย์สิน</h3>
+              <img src="img/fire.png" alt="Property Insurance" />
+              <p>คุ้มครองทรัพย์สินจากภัยธรรมชาติและอุบัติเหตุ</p>
+              <button className="btn-primary" onClick={whenClickToFire}>
+                รายละเอียด
+              </button>
+            </div>
+            <div className="product-card">
+              <h3>ประกันภัยสินค้าทางทะเลและขนส่ง</h3>
+              <img src="img/transportation.png" alt="Marine Insurance" />
+              <p>คุ้มครองสินค้าระหว่างการขนส่ง</p>
+              <button
+                className="btn-primary"
+                onClick={whenClickToTransportation}
+              >
+                รายละเอียด
+              </button>
+            </div>
+            <div className="product-card">
+              <h3>ประกันภัยเบ็ดเตล็ด</h3>
+              <img src="img/miscellaneous.png" alt="Miscellaneous Insurance" />
+              <p>ครอบคลุมความเสี่ยงอื่นๆ</p>
+              <button
+                className="btn-primary"
+                onClick={whenClickToMiscellaneous}
+              >
+                รายละเอียด
+              </button>
+            </div>
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className="home-footer">
+          <p>CAR INSURANCE SYSTEM จัดทำโดย นายจตุรงค์ ผาสุข</p>
+          <p>เพื่อการศึกษาระหว่างฝึกงาน ไอโออิ กรุงเทพ ประกันภัย (มหาชน)</p>
+        </footer>
+      </div>
     </>
-}
+  );
+};
 
 export default Home;

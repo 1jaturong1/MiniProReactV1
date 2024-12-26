@@ -5,7 +5,11 @@ import Fire from './page/Fire.tsx';
 import Miscellaneous from './page/Miscellaneous.tsx';
 import Transportation from './page/Transportation.tsx';
 import Motor from './page/Motor.tsx';
-import Marine from './page/marine.tsx'
+import Claim from "./page/Claim.tsx";
+import Warrantyclaim from "./page/Warrantyclaim.tsx";
+import WarrantycaimFrom from "./page/Warrantycaimfrom.tsx";
+import Suggestions from "./page/Suggestions.tsx";
+
 
 export const router = createBrowserRouter([
     {
@@ -37,11 +41,22 @@ export const router = createBrowserRouter([
         element: <Transportation />,
     },
     {
-        path:'/marine',
-        element:<Marine/>,
-    }
-    
-        
+        path: '/claim',
+        element: <Claim />,
+    },
+    {
+        path: '/warrantyclaim',
+        element: <Warrantyclaim />,
+    },
+    {
+        path: '/warrantyclaimfrom',
+        element: <WarrantycaimFrom />,
+    },
+    {
+        path: '/suggestions',
+        element: <Suggestions />,
+    },
+
 ]);
 
 export default router;
